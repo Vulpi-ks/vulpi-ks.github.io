@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ксюша · английский для взрослых</title>
+<meta name="description" content="Английский для взрослых A0–B2: индивидуальные, парные, групповые и асинхронные занятия. Консультации для преподавателей.">
+<meta property="og:title" content="Ксюша · английский для взрослых">
+<meta property="og:description" content="Помогаю взрослым не просто учить английский, а начинать им пользоваться.">
+<meta property="og:image" content="img/banner.jpg">
+<meta name="theme-color" content="#f3ede6">
+<style>
+  @font-face{font-family:"Nunito";src:url(fonts/nunito.woff) format("woff");font-weight:200 1000;font-style:normal;font-display:swap}
+  @font-face{font-family:"Nunito";src:url(fonts/nunito-italic.woff) format("woff");font-weight:200 1000;font-style:italic;font-display:swap}
+
+  :root{
+    --bg:#f3ede6;
+    --card:#fbf8f4;
+    --ink:#2b211b;
+    --soft:#4d4038;
+    --muted:#8a7a6d;
+    --pink:#c0475e;
+    --pink-d:#a83a50;
+    --blush:#efd9d6;
+    --sand:#e6dacb;
+    --line:#e2d6c9;
+    --f:"Nunito", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-weight:500;font-size:17.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--pink)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  h1,h2,h3,h4{font-weight:900;letter-spacing:-.02em;margin:0;line-height:1.05}
+  h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
+  .hl{background:var(--pink);color:#fff;padding:0 6px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;font-weight:700}
+  .pill{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700;line-height:1.3}
+  .pill.pk{border-color:var(--pink);color:var(--pink)}
+  .star{color:var(--pink)}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:20;background:rgba(243,237,230,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+  .logo{font-weight:900;font-size:21px;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .logo span{color:var(--pink)}
+  .menu{display:flex;gap:8px;align-items:center}
+  .menu a.pill{color:var(--ink);text-decoration:none;font-size:14px;transition:background .2s,color .2s}
+  .menu a.pill:hover{background:var(--ink);color:#fff}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:#fff !important;text-decoration:none;font-weight:800;font-size:16px;padding:13px 24px;border-radius:999px;transition:background .2s,transform .2s;border:0}
+  .btn:hover{background:var(--pink-d);transform:translateY(-1px)}
+  .btn.line{background:transparent;color:var(--ink) !important;border:1.5px solid var(--ink)}
+  .btn.line:hover{background:var(--ink);color:#fff !important}
+  .btn.sm{padding:8px 16px;font-size:14px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:60px 0 30px}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .hero h1{font-size:clamp(44px,6.4vw,76px);margin:18px 0 22px}
+  .hero p{margin:0 0 14px;color:var(--soft)}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .banner{border-radius:26px;overflow:hidden;box-shadow:0 26px 50px -26px rgba(70,40,25,.35);background:#efe3d6}
+  .banner img{width:100%;height:auto}
+  .arch{max-width:440px;margin:0 auto;position:relative}
+  .arch img{width:100%;height:auto;filter:drop-shadow(0 24px 30px rgba(70,40,25,.18))}
+  .arch::before{content:"✦";position:absolute;right:-6px;top:18%;color:var(--pink);font-size:34px}
+  .arch::after{content:"✦";position:absolute;left:-14px;top:52%;color:var(--pink);font-size:22px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .fact{background:var(--card);border-radius:16px;padding:12px 16px;flex:1;min-width:120px}
+  .fact b{display:block;font-size:26px;font-weight:900;color:var(--pink);line-height:1.1}
+  .fact span{font-size:14px;color:var(--muted)}
+
+  /* ---------- toggles ---------- */
+  details{margin-top:14px}
+  summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:10px;font-weight:800;color:var(--pink)}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;transition:transform .25s;flex:none}
+  details[open]>summary::before{transform:rotate(45deg)}
+  .drop{margin-top:12px;background:var(--card);border-radius:16px;padding:16px 20px;font-size:16px;color:var(--soft)}
+  .drop p{margin:0 0 8px}
+  .drop p:last-child{margin:0}
+  .detail .drop{background:var(--bg)}
+  .drop ul.stars{margin:6px 0 10px}
+
+  /* ---------- sections ---------- */
+  section.block{padding:70px 0}
+  .head{margin-bottom:34px}
+  .head .pill{margin-bottom:16px}
+  .head h2{font-size:clamp(34px,4.8vw,54px)}
+  .head p{color:var(--soft);max-width:700px;margin:16px 0 0}
+
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:center}
+  .about .photo{border-radius:26px;overflow:hidden;box-shadow:0 26px 50px -26px rgba(70,40,25,.35)}
+  .about .photo img{width:100%;height:auto}
+  .about p{color:var(--soft);margin:0 0 16px}
+  .quote{font-size:24px;font-weight:800;line-height:1.3;margin:0 0 20px;color:var(--ink)}
+  .quote em{font-style:normal;color:var(--pink)}
+  .c2{background:var(--card);border-radius:22px;padding:24px 26px;margin-top:22px;border:1.5px solid var(--blush)}
+  .c2 h3{font-size:26px;margin:12px 0 12px}
+  .c2 p{margin:0 0 10px}
+
+  .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .cards .card{grid-column:span 2}
+  .cards .card:nth-child(4),.cards .card:nth-child(5){grid-column:span 3}
+  .cards .card.wide{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1.2fr;gap:8px 40px;align-items:start}
+  .cards .card.wide .l h4{margin-top:14px}
+  .cards .card.wide ul{margin:6px 0 12px}
+  details.pop{position:relative}
+  details.pop .drop{position:absolute;left:-8px;top:calc(100% + 10px);width:min(380px,82vw);z-index:15;background:#fff;
+    box-shadow:0 18px 40px -12px rgba(70,40,25,.35);font-size:14.5px;line-height:1.5;padding:14px 16px;border-radius:14px}
+  details.pop .drop p{margin:0 0 7px}
+  .detail details.pop .drop{background:#fff}
+  details.pop .drop ul.stars li{margin-bottom:4px}
+  .cards .card:has(details[open]){transform:none !important;position:relative;z-index:16}
+  .feat:has(details[open]){position:relative;z-index:16}
+  .cards .card.wide .r{padding-top:44px}
+  .card{background:var(--card);border-radius:22px;padding:26px 24px;transition:transform .25s, box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(70,40,25,.35)}
+  .card .num{display:inline-block;background:var(--blush);color:var(--pink);font-weight:900;font-size:14px;border-radius:999px;padding:3px 11px}
+  .card h4{font-size:21px;margin:14px 0 10px;line-height:1.2}
+  .card p{margin:0 0 8px;font-size:16px;color:var(--soft)}
+  .card ul{margin:0;padding:0;list-style:none;font-size:15.5px;color:var(--soft)}
+  .card ul li{position:relative;padding-left:20px;margin-bottom:6px}
+  .card ul li::before{content:"✦";position:absolute;left:0;color:var(--pink);font-size:13px;top:2px}
+
+  .gallery{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x mandatory}
+  .gallery img{height:300px;width:auto;border-radius:16px;flex:none;scroll-snap-align:start;cursor:zoom-in;background:#fff;box-shadow:0 10px 24px -16px rgba(70,40,25,.4)}
+  .gallery.tall img{height:400px}
+  .gallery::-webkit-scrollbar{height:6px}
+  .gallery::-webkit-scrollbar-thumb{background:var(--pink);border-radius:6px}
+
+  /* ---------- формат-плитки ---------- */
+  .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .tile{display:flex;flex-direction:column;justify-content:space-between;min-height:250px;padding:28px;border-radius:26px;text-decoration:none;color:var(--ink);transition:transform .25s, box-shadow .25s}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(70,40,25,.45)}
+  .tile.t1{background:var(--pink);color:#fff}
+  .tile.t2{background:var(--blush)}
+  .tile.t3{background:var(--sand)}
+  .tile.t4{background:var(--card);border:1.5px solid var(--line)}
+  .tile .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .tile.t1 .pill{border-color:#fff}
+  .tile h3{font-size:clamp(28px,3.4vw,38px);margin-top:26px}
+  .tile .sub{font-size:16px;margin-top:8px;opacity:.85}
+  .tile .go{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:var(--ink);transition:transform .25s;flex:none}
+  .tile:hover .go{transform:rotate(-45deg)}
+  .tile .price{font-weight:900;font-size:20px}
+
+  /* ---------- библиотека ---------- */
+  .lib{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;background:var(--blush);border-radius:32px;padding:44px 48px;text-decoration:none;color:var(--ink);transition:transform .25s, box-shadow .25s}
+  .lib:hover{transform:translateY(-4px);box-shadow:0 24px 44px -26px rgba(70,40,25,.45)}
+  .lib h2{font-size:clamp(34px,4.6vw,52px);margin:16px 0 12px}
+  .lib p{color:var(--soft);margin:0 0 22px;font-size:18px}
+  .lib-r{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .lib-r span{background:var(--card);border-radius:999px;padding:9px 16px;font-weight:800;font-size:15px}
+  /* ---------- подробные разделы ---------- */
+  .detail{background:var(--card);border-radius:32px;padding:52px 56px;margin-bottom:24px}
+  .detail .top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .detail h2{font-size:clamp(32px,4.4vw,48px);margin-top:14px}
+  .detail .intro{color:var(--soft);margin:16px 0 0;max-width:720px}
+  .detail h3{font-size:24px;margin:40px 0 16px}
+  .detail p{margin:0 0 12px;color:var(--soft)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+  .feat b{display:block;font-weight:900;font-size:18px;margin-bottom:4px}
+  .feat b::before{content:"✦ ";color:var(--pink)}
+  .feat p{font-size:16px;margin:0}
+  ul.stars{list-style:none;padding:0;margin:0 0 12px}
+  ul.stars li{position:relative;padding-left:24px;margin-bottom:9px;color:var(--soft)}
+  ul.stars li::before{content:"✦";position:absolute;left:0;top:1px;color:var(--pink);font-size:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+  .chips span{background:var(--blush);color:var(--pink);font-weight:800;font-size:15px;border-radius:999px;padding:5px 14px}
+  .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:12px}
+  .price-box{background:var(--bg);border-radius:22px;padding:24px}
+  .price-box .lbl{font-weight:800;font-size:15px;color:var(--muted)}
+  .price-box .sum{font-weight:900;font-size:40px;line-height:1.1;margin:6px 0 2px;letter-spacing:-.02em}
+  .price-box .sum small{font-size:17px;font-weight:700;color:var(--muted);letter-spacing:0}
+  .price-box ul{margin-top:12px}
+  .price-box.hot{background:var(--blush)}
+  .note{color:var(--muted) !important;font-size:15px}
+  .faq details{background:var(--bg);border-radius:16px;padding:14px 18px;margin:0 0 10px}
+  .faq summary{color:var(--ink)}
+  .faq details p{margin:10px 0 0 34px}
+  .contact{margin-top:36px;padding-top:26px;border-top:1.5px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .contact p{margin:0;max-width:580px}
+
+  /* ---------- финал ---------- */
+  .cta{background:var(--pink);color:#fff;border-radius:34px;padding:58px 52px;margin:30px 0 24px;text-align:center}
+  .cta h2{font-size:clamp(36px,5.4vw,60px)}
+  .cta p{max-width:560px;margin:16px auto 30px;opacity:.92}
+  .socials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:860px;margin:0 auto}
+  .social{display:flex;gap:12px;align-items:center;text-align:left;text-decoration:none;color:var(--ink);background:#fff;border-radius:18px;padding:14px 16px;transition:transform .2s}
+  .social:hover{transform:translateY(-3px)}
+  .social .ic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff;flex:none}
+  .tg{background:#2aa3df}.ig{background:linear-gradient(45deg,#f5a623,#e1306c,#833ab4)}
+  .social b{display:block;font-size:16px;line-height:1.25}
+  .social small{display:block;color:var(--muted);font-size:13px}
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:16px 0 40px}
+
+  #lb{position:fixed;inset:0;background:rgba(43,33,27,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+  #lb.on{display:flex}
+  #lb img{max-width:100%;max-height:100%;border-radius:12px}
+
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
+  .js .rv.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero .wrap,.about{grid-template-columns:1fr;gap:30px}
+    .lib{grid-template-columns:1fr}
+    .about .photo{max-width:420px}
+    .cards{grid-template-columns:1fr 1fr}
+    .cards .card,.cards .card:nth-child(4),.cards .card:nth-child(5){grid-column:auto}
+    .cards .card:nth-child(5){grid-column:1 / -1}
+    .cards .card.wide{grid-template-columns:1fr}
+    .cards .card.wide .r{padding-top:0}
+    .menu a.pill{display:none}
+  }
+  @media (max-width:620px){
+    body{font-size:16.5px}
+    .wrap{padding:0 18px}
+    .hero{padding:30px 0 10px}
+    section.block{padding:52px 0}
+    .cards,.tiles,.two,.socials{grid-template-columns:1fr}
+    .lib{grid-template-columns:1fr;padding:30px 22px;border-radius:24px}
+    .lib-r{justify-content:flex-start}
+    .detail{padding:32px 22px;border-radius:24px}
+    .cta{padding:42px 22px;border-radius:26px}
+    .tile{min-height:210px;padding:24px}
+    .gallery img{height:240px}.gallery.tall img{height:330px}
+    .logo{font-size:19px}
+    .quote{font-size:21px}
+    .arch{max-width:340px}
+    .arch::before{right:2px}
+    .arch::after{left:0}
+  }
+  @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+<script>document.documentElement.className='js'</script>
+</head>
+<body id="top">
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">vulpiks <span>•</span> english</a>
+    <div class="menu">
+      <a class="pill" href="#about">обо мне</a>
+      <a class="pill" href="#formats">форматы</a>
+      <a class="pill" href="#reviews">отзывы</a>
+      <a class="pill" href="#clubs">клубы</a>
+      <a class="pill" href="library/">библиотека</a>
+      <a class="btn sm" href="https://t.me/vulpiks" target="_blank" rel="noopener">записаться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>добро <em>пожаловать!</em></h1>
+      <p>Привет! Я Ксюша - преподаватель английского. Уже больше 12 лет помогаю взрослым не просто учить английский, а постепенно <span class="hl">начинать им пользоваться</span>.</p>
+      <p>Ко мне можно прийти <span class="hl">вообще с нуля</span>, вернуться к английскому после большого перерыва или продолжить с уже имеющимся уровнем.</p>
+      <p>Работаю со взрослыми <span class="hl">A0 – B2</span>: от первых фраз и базовой грамматики до YouTube, сериалов, подкастов и других материалов, которые интересно смотреть и читать вне уроков. 🌟</p>
+      <div class="actions">
+        <a class="btn" href="https://t.me/vulpiks" target="_blank" rel="noopener">Бесплатная встреча - знакомство</a>
+        <a class="btn line" href="#formats">Что я могу предложить</a>
+      </div>
+    </div>
+    <div>
+      <div class="arch"><img src="img/me-arch.png" alt="Ксюша, преподаватель английского" width="590" height="648"></div>
+      <div class="facts" style="max-width:440px;margin-left:auto;margin-right:auto">
+        <div class="fact"><b>12+</b><span>лет преподаю</span></div>
+        <div class="fact"><b>A0–B2</b><span>уровни учеников</span></div>
+        <div class="fact"><b>C2</b><span>мой уровень, CPE</span></div>
+        <div class="fact"><b>онлайн</b><span>из любой точки</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ОБО МНЕ ===== -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="photo rv"><img src="img/p-about.jpg" alt="Ксюша за работой" loading="lazy"></div>
+      <div class="rv">
+        <div class="head" style="margin-bottom:22px"><h2>немного <em>обо мне</em></h2></div>
+        <h3 style="font-size:24px;margin:0 0 12px">Опыт</h3>
+        <p>Я начинала свою карьеру с работы с детьми и подростками. Постепенно, обучаясь и набирая опыт, я продолжила работать со старшими подростками, которые готовятся к экзаменам. Сейчас я преимущественно работаю со взрослыми, которым английский нужен для жизни, карьеры или переезда.</p>
+        <p>Каждый новый этап в преподавании - это новый взгляд на язык, подходы и мотивацию. Именно этот разносторонний опыт помогает мне не только эффективно учить, но и поддерживать других преподавателей - делиться методиками, идеями и помогать выстраивать свой профессиональный путь.</p>
+        <div class="c2">
+          <span class="pill pk">мой уровень</span>
+          <h3>я сдала CPE на уровень <em>C2</em>&nbsp;✦</h3>
+          <p>Бакалавриат и магистратура - это база. А свой уровень я подтвердила <span class="hl">международными экзаменами</span>: CPE, TKT для преподавателей и Duolingo English Test на 135.</p>
+          <p class="note" style="margin:0">если интересно: CPE - самый высокий экзамен Cambridge</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОДХОД ===== -->
+<section class="block" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><h2>мой подход <em>к обучению</em></h2></div>
+    <div class="cards">
+      <div class="card rv">
+        <span class="num">01</span>
+        <h4>Современные методики</h4>
+        <p>Я использую три проверенных подхода - коммуникативный подход, лексический и dogme.</p>
+        <details class="pop">
+          <summary>Что это такое</summary>
+          <div class="drop">
+            <p><b>Коммуникативный</b> - фокус на реальное использование языка, а не заучивание правил.</p>
+            <p><b>Лексический</b> - учим не отдельные слова, а устойчивые фразы и выражения, как в реальной жизни.</p>
+            <p><b>Dogme</b> - минимум шаблонов и учебников, максимум живого общения и спонтанности.</p>
+          </div>
+        </details>
+      </div>
+      <div class="card rv">
+        <span class="num">02</span>
+        <h4>Комфорт и интерес - на первом месте</h4>
+        <p>Я создаю атмосферу, в которой вы не боитесь говорить и делать ошибки. Уроки проходят легко, вживую и с удовольствием - даже если вы раньше боялись говорить на английском.</p>
+      </div>
+      <div class="card rv">
+        <span class="num">03</span>
+        <h4>Чёткая структура и индивидуальный подход</h4>
+        <p>Для каждого ученика я разрабатываю <b>персональную программу</b> обучения - в зависимости от целей, уровня и интересов. Вы точно знаете, зачем мы что-то учим и как это приближает вас к цели.</p>
+      </div>
+      <div class="card rv">
+        <span class="num">04</span>
+        <h4>Вы говорите с первого занятия</h4>
+        <p>Я убеждена: язык - это, прежде всего, коммуникация. Поэтому с самого первого урока вы начинаете говорить по-английски - даже если пока только на базовом уровне.</p>
+      </div>
+      <div class="card rv">
+        <span class="num">05</span>
+        <h4>Обратная связь - ключ к прогрессу</h4>
+        <p>Мне важно слышать своих студентов. Мы регулярно обсуждаем ваш прогресс, сложности и пожелания, чтобы сделать занятия максимально полезными именно для вас.</p>
+      </div>
+      <div class="card wide rv">
+        <div class="l"><span class="num">06</span>
+        <h4>Удобная и современная платформа ProgressMe</h4>
+        <p>Для занятий я использую платформу ProgressMe и доску Holst - удобные инструменты, которые помогают учиться эффективнее:</p></div>
+        <div class="r"><ul>
+          <li>Домашние задания проверяются автоматически, поэтому ты сразу видишь свои ошибки и рекомендации</li>
+          <li>В любой момент можно вернуться к пройденным темам, повторить материал и закрепить знания</li>
+          <li>Вся учебная история хранится в одном месте - ничего не теряется и всегда под рукой</li>
+        </ul>
+        <p>Эта платформа делает обучение более комфортным и организованным, позволяя сосредоточиться на главном - на практике и прогрессе.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СЕРТИФИКАТЫ ===== -->
+<section class="block" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><h2><em>сертификаты</em></h2>
+      <p>Я регулярно вкладываюсь в своё развитие как преподаватель и методист. У меня есть как международные сертификаты, так и десятки курсов, воркшопов и обучений по методике, работе с материалами, планированию и современным платформам.</p></div>
+    <div class="gallery rv">
+      <img src="img/cert-1.jpg" alt="Сертификат Duolingo English Test" loading="lazy" onerror="this.remove()">
+      <img src="img/cert-2.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
+      <img src="img/cert-3.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
+      <img src="img/cert-4.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
+      <img src="img/cert-5.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ФОРМАТЫ ===== -->
+<section class="block" id="formats" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><h2>что я могу <em>предложить</em></h2></div>
+    <div class="tiles">
+      <a class="tile t1 rv" href="#individual">
+        <div class="top"><span class="pill">1 на 1 · онлайн</span><span class="go">→</span></div>
+        <div><h3>индивидуальные занятия</h3><div class="sub"><span class="price">2000 ₽</span> · 60 минут</div></div>
+      </a>
+      <a class="tile t2 rv" href="#async">
+        <div class="top"><span class="pill">в своём темпе</span><span class="go">→</span></div>
+        <div><h3>асинхронные занятия</h3><div class="sub"><span class="price">от 8000 ₽</span> / месяц</div></div>
+      </a>
+      <a class="tile t3 rv" href="#group">
+        <div class="top"><span class="pill">до 4 человек</span><span class="go">→</span></div>
+        <div><h3>парные и групповые</h3><div class="sub"><span class="price">от 1000 ₽</span> / чел</div></div>
+      </a>
+      <a class="tile t4 rv" href="#teachers">
+        <div class="top"><span class="pill">для коллег</span><span class="go" style="background:var(--blush)">→</span></div>
+        <div><h3>консультации для преподавателей</h3><div class="sub"><span class="price">60 минут</span> · онлайн</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ОТЗЫВЫ ===== -->
+<section class="block" id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><h2><em>отзывы</em></h2>
+      <p>Вот что студенты говорят о наших занятиях</p></div>
+    <div class="gallery tall rv">
+      <img src="img/review-1.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
+      <img src="img/review-2.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
+      <img src="img/review-3.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- ===== КЛУБЫ ===== -->
+<section class="block" id="clubs" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><h2>разговорные <em>клубы</em></h2></div>
+    <div class="tiles">
+      <a class="tile t3 rv" href="clubs/">
+        <div class="top"><span class="pill">Онлайн · по выходным</span><span class="go">→</span></div>
+        <div><h3>Talk Clubs: Easy Talk и Real Talk</h3><div class="sub">Приходи говорить, а не учить правила · <span class="price">700 ₽</span> за встречу</div></div>
+      </a>
+      <a class="tile t2 rv" href="girlies/">
+        <div class="top"><span class="pill">Только для девушек · онлайн</span><span class="go">→</span></div>
+        <div><h3>Girlies Only</h3><div class="sub">Girl talk, but make it English · <span class="price">700 ₽</span> за встречу</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== БИБЛИОТЕКА ===== -->
+<section class="block" id="library" style="padding-top:20px">
+  <div class="wrap">
+    <a class="lib rv" href="library/">
+      <div class="lib-l">
+        <span class="pill pk">📚 Библиотека от Ксюши</span>
+        <h2>английский <em>вне уроков</em></h2>
+        <p>Более 100 бесплатных ресурсов, которые помогут сделать английский частью жизни</p>
+        <span class="btn">Открыть библиотеку →</span>
+      </div>
+      <div class="lib-r">
+        <span>🎥 Смотреть</span><span>🎧 Слушать</span><span>📖 Читать</span><span>📚 Работать с лексикой</span><span>🗣 Говорить</span><span>✍️ Писать</span><span>🤖 AI</span><span>📱 Приложения</span><span>🎮 По интересам</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== ПОДРОБНО ===== -->
+<section class="block" style="padding-top:20px">
+  <div class="wrap">
+
+    <!-- Индивидуальные -->
+    <article class="detail rv" id="individual">
+      <div class="top">
+        <div><span class="pill pk">1 на 1 · онлайн</span><h2>индивидуальные <em>занятия</em></h2></div>
+        <a class="btn" href="https://t.me/vulpiks" target="_blank" rel="noopener">Бесплатная встреча - знакомство</a>
+      </div>
+
+      <h3>Почему стоит заниматься со мной?</h3>
+      <div class="two">
+        <div class="feat"><b>Индивидуальный подход</b><p>Никаких шаблонов и «одного учебника на всех». Я адаптирую программу под твои цели, интересы и темп - чтобы занятия были не только полезными, но и в кайф.</p></div>
+        <div class="feat"><b>Говорим с первого занятия</b><p>Я верю, что язык - это в первую очередь общение. Ты начнёшь говорить по-английски с самого первого урока, без зубрёжки и стресса.</p></div>
+        <div class="feat"><b>Живые и аутентичные материалы</b><p>Мы не будем заниматься только по скучным учебникам. Вместо этого - видео, подкасты, статьи, реальные диалоги и много практики.</p>
+          <details class="pop">
+        <summary>Что такое аутентичные материалы?</summary>
+        <div class="drop">
+          <p>Аутентичные материалы - это реальный английский, который используют носители языка в повседневной жизни. Это могут быть:</p>
+          <ul class="stars"><li>статьи из новостей и блогов</li><li>видео и фильмы на английском</li><li>подкасты и интервью</li><li>песни и реальные диалоги</li></ul>
+          <p>В отличие от учебников, такие материалы показывают живой язык - с естественной речью, выражениями и культурными особенностями. Они помогают не просто учить грамматику, а понимать и говорить так, как говорят настоящие англоговорящие люди.</p>
+        </div>
+      </details></div>
+        <div class="feat"><b>Обратная связь и поддержка</b><p>Ты не один/одна в процессе: я внимательно слежу за твоими успехами, даю обратную связь и подстраиваю программу, если нужно.</p></div>
+        <div class="feat"><b>Прогресс, который чувствуется</b><p>Каждое занятие - это шаг вперёд. Ты будешь видеть и чувствовать свой рост, а не просто «проходить темы».</p></div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Как и где проходят занятия?</h3>
+          <p>Занятия проходят онлайн.</p>
+          <ul class="stars">
+            <li>100% внимания тебе: всё занятие построено под твои цели, ритм и интересы</li>
+            <li>Использую аутентичные материалы, реальные ситуации и современные методики</li>
+            <li>Фокус на разговорной практике - ты говоришь на английском уже с первого занятия</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Какие правила оплаты, отмен занятий?</h3>
+          <ul class="stars">
+            <li>Оплата до начала занятий</li>
+            <li>Отменить или перенести можно не позднее, чем за 2 часа</li>
+            <li>В случае поздней отмены занятие считается проведённым, и я скидываю материалы для самостоятельного изучения</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Какая стоимость занятий?</h3>
+      <div class="prices">
+        <div class="price-box hot"><div class="sum">60 минут - 2000₽</div><p class="note" style="margin:6px 0 0">Оплачивается абонементом на месяц - 4 или 8 занятий, в зависимости от расписания.</p></div>
+      </div>
+
+      <h3>Асинхронное обучение?</h3>
+      <p>Если у тебя плотный график или хочется больше самостоятельности - можно дополнить занятия асинхронным форматом.</p>
+      <p><b>Что это значит?</b></p>
+      <ul class="stars">
+        <li>Ты получаешь задания, материалы, видео и упражнения - в удобное для тебя время</li>
+        <li>Я проверяю, даю подробную обратную связь и рекомендации</li>
+        <li>Мы можем чередовать асинхронные и живые занятия или комбинировать их по твоим целям</li>
+      </ul>
+      <p class="note">Асинхронный формат отлично подойдёт для тех, кто хочет идти в своём темпе, углубиться в грамматику, письмо или просто не всегда может присутствовать на онлайн-уроках.</p>
+
+      <div class="contact">
+        <p>💬 Есть вопросы или хочешь записаться? Напиши в Telegram - <a href="https://t.me/vulpiks" target="_blank" rel="noopener">@vulpiks</a>, всегда рада помочь! Или приходи на <a href="https://t.me/+LJrEV_wAHwQzYzky" target="_blank" rel="noopener">мой канал</a>.</p>
+        <a class="btn line sm" href="#formats">← все форматы</a>
+      </div>
+    </article>
+
+    <!-- Асинхронные -->
+    <article class="detail rv" id="async">
+      <div class="top">
+        <div><span class="pill pk">в своём темпе</span><h2>асинхронные <em>занятия</em></h2></div>
+        <a class="btn" href="https://t.me/vulpiks" target="_blank" rel="noopener">Бесплатная встреча - знакомство</a>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Почему я выбрала именно такой формат?</h3>
+          <p>За годы преподавания я заметила одну закономерность: прогресс чаще зависит не от количества часов на уроке, а от регулярности практики.</p>
+          <p>Поэтому асинхронное обучение построено вокруг небольших, но постоянных шагов. Такой формат легче встроить в жизнь, а значит, английский перестаёт быть «делом, до которого никак не доходят руки» и становится привычной частью недели.</p>
+        </div>
+        <div>
+          <h3>Как проходит обучение?</h3>
+          <ul class="stars">
+            <li>В начале недели ты получаешь подборку заданий на интерактивной платформе.</li>
+            <li>Выполняешь их в удобное время в течение недели.</li>
+            <li>В выходные я проверяю все задания, даю подробную обратную связь, отвечаю на вопросы и открываю следующую неделю обучения.</li>
+          </ul>
+          <p class="note">Такой формат помогает заниматься регулярно, но без ощущения, что английский занимает весь вечер.</p>
+        </div>
+      </div>
+
+      <h3>Что входит в задания?</h3>
+      <p>Каждая неделя включает разные виды практики.<br>Например:</p>
+      <div class="chips"><span>чтение;</span><span>аудирование;</span><span>говорение;</span><span>письмо;</span><span>работа с лексикой;</span><span>грамматика в контексте.</span></div>
+      <p>Все задания связаны между собой и постепенно помогают развивать язык комплексно.</p>
+
+      <h3>Почему этот формат работает?</h3>
+      <div class="two">
+        <div class="feat"><b>Небольшие задания вместо одного большого урока</b><p>10–15 минут гораздо легче найти даже в насыщенном графике.</p></div>
+        <div class="feat"><b>Регулярная практика</b><p>Ты занимаешься английским несколько раз в неделю, а не вспоминаешь о нём только раз в семь дней.</p></div>
+        <div class="feat"><b>Постоянная поддержка преподавателя</b><p>Ты не остаёшься один на один с материалами - я проверяю каждое выполненное задание и помогаю разобраться со всеми вопросами.</p></div>
+        <div class="feat"><b>Обучение в своём темпе</b><p>Можно самостоятельно планировать неделю и выполнять задания тогда, когда удобно именно тебе.</p></div>
+        <div class="feat"><b>Все материалы остаются у тебя</b><p>К ним всегда можно вернуться и повторить тему позже.</p></div>
+      </div>
+
+      <h3>Какие есть тарифы?</h3>
+      <div class="prices">
+        <div class="price-box">
+          <span class="lbl">📚 Асинхронное обучение</span>
+          <p style="margin:8px 0 0">В стоимость входит:</p>
+          <ul class="stars"><li>4–5 заданий каждую неделю</li><li>подробная проверка всех работ</li><li>обратная связь</li><li>ответы на вопросы</li><li>индивидуальная программа обучения.</li></ul>
+          <div class="sum" style="font-size:28px;margin-top:10px">Стоимость - 8000₽ / месяц</div>
+        </div>
+        <div class="price-box hot">
+          <span class="lbl">💬 Асинхронное обучение + встречи</span>
+          <p style="margin:8px 0 0">Всё, что входит в базовый тариф, плюс:</p>
+          <ul class="stars"><li>2 встречи в месяц по 20–30 минут</li><li>разговорная практика</li><li>разбор сложных моментов</li><li>закрепление изученного материала.</li></ul>
+          <div class="sum" style="font-size:28px;margin-top:10px">Стоимость - 10000₽ / месяц</div>
+        </div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Кому подойдет этот формат?</h3>
+          <ul class="stars">
+            <li>Если у тебя нестабильный график.</li>
+            <li>Если сложно выделять час на урок каждую неделю.</li>
+            <li>Если хочется учиться регулярно, но в комфортном темпе.</li>
+            <li>Если ты ценишь самостоятельность, но при этом хочешь поддержку преподавателя.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Частые вопросы</h3>
+          <div class="faq">
+            <details><summary>Нужно ли заниматься каждый день?</summary><p>Нет. Ты сам(-а) распределяешь задания в течение недели.</p></details>
+            <details><summary>Что делать, если возник вопрос?</summary><p>Можно написать мне - я помогу разобраться.</p></details>
+            <details><summary>А если мне нужна разговорная практика?</summary><p>Можно выбрать тариф с двумя созвонами в месяц или совмещать асинхронное обучение с индивидуальными занятиями.</p></details>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <p>💬 Есть вопросы или хочешь записаться? Напиши мне в Telegram - <a href="https://t.me/vulpiks" target="_blank" rel="noopener">@vulpiks</a>. Буду рада помочь! Или приходи на <a href="https://t.me/+LJrEV_wAHwQzYzky" target="_blank" rel="noopener">мой канал</a>.</p>
+        <a class="btn line sm" href="#formats">← все форматы</a>
+      </div>
+    </article>
+
+    <!-- Парные / групповые -->
+    <article class="detail rv" id="group">
+      <div class="top">
+        <div><span class="pill pk">до 4 человек</span><h2>парные и групповые <em>занятия</em></h2></div>
+        <a class="btn" href="https://t.me/vulpiks" target="_blank" rel="noopener">Бесплатная встреча - знакомство</a>
+      </div>
+
+      <h3>Почему стоит заниматься в группе?</h3>
+      <div class="two">
+        <div class="feat"><b>Учиться вместе - это мотивация</b><p>На занятиях ты не просто учишься, а взаимодействуешь с другими: обсуждаешь, слушаешь, отвечаешь, реагируешь. Это помогает лучше запоминать и не терять мотивацию.</p></div>
+        <div class="feat"><b>Баланс между структурой и живым общением</b><p>Каждое групповое занятие - это чёткий план, но с гибкостью и живой атмосферой. Упор на практику, вовлечённость и поддержку между участниками.</p></div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Как и где проходят занятия?</h3>
+          <p>Занятия проходят онлайн, в тёплой и вовлечённой атмосфере.</p>
+          <ul class="stars">
+            <li>Мини-группа (до 4 человек) или парный формат</li>
+            <li>Много разговорной практики, интерактивные задания, работа в парах</li>
+            <li>Упор на коммуникацию, гибкость и развитие всех языковых навыков</li>
+            <li>Занятия строятся так, чтобы каждый участник был вовлечён и чувствовал прогресс</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Какие правила оплаты, отмен занятий?</h3>
+          <ul class="stars">
+            <li>Оплата до начала курса или по абонементу</li>
+            <li>В парных занятиях отмена возможна за 2 часа (по обоюдному согласию)</li>
+            <li>В группах пропущенные занятия не компенсируются, но можно получить материалы и рекомендации</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Какая стоимость занятий?</h3>
+      <div class="prices">
+        <div class="price-box"><div class="sum" style="font-size:24px">Парные занятия - 1200₽/чел</div></div>
+        <div class="price-box hot"><div class="sum" style="font-size:24px">Групповые занятия - 1000₽/чел</div></div>
+      </div>
+      <p class="note">Оплачивается абонементом на месяц - 4 или 8 занятий, в зависимости от расписания.</p>
+
+      <div class="contact">
+        <p>💬 Есть вопросы или хочешь записаться? Напиши в Telegram - <a href="https://t.me/vulpiks" target="_blank" rel="noopener">@vulpiks</a>, всегда рада помочь! Или приходи на <a href="https://t.me/+LJrEV_wAHwQzYzky" target="_blank" rel="noopener">мой канал</a>.</p>
+        <a class="btn line sm" href="#formats">← все форматы</a>
+      </div>
+    </article>
+
+    <!-- Преподавателям -->
+    <article class="detail rv" id="teachers">
+      <div class="top">
+        <div><span class="pill pk">для коллег</span><h2>консультации для <em>преподавателей</em></h2></div>
+        <a class="btn" href="https://t.me/vulpiks" target="_blank" rel="noopener">Свяжись со мной</a>
+      </div>
+      <p class="intro">Мои консультации - это не просто советы, а глубокая работа с вашим конкретным кейсом. Мы разберём ваш вопрос до деталей и найдём практичные решения, которые можно применять сразу после встречи.</p>
+
+      <div class="two">
+        <div>
+          <h3>Почему я?</h3>
+          <ul class="stars">
+            <li>Опираюсь на современные методики (коммуникативный, лексический, dogme)</li>
+            <li>Работаю с реальными учениками и группами - и понимаю ваши боли</li>
+            <li>Конкретика и эффективность - без воды и теории ради теории</li>
+            <li>Знаю, как встроить любые рекомендации в ваш стиль преподавания</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Как проходит консультация</h3>
+          <ul class="stars">
+            <li>Вы формулируете запрос - до встречи или в начале сессии</li>
+            <li>Мы обсуждаем цель и контекст - кому вы преподаёте, какие сложности возникают</li>
+            <li>Я даю конкретные рекомендации - включая шаблоны, примеры, ресурсы</li>
+            <li>Вы получаете краткое резюме консультации - с чек-листами, ссылками, материалами</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prices" style="margin-top:24px">
+        <div class="price-box hot"><p style="margin:0;color:var(--ink)"><b>Длительность: 60 минут.</b> Онлайн. Формат - любая удобная вам платформа.</p></div>
+      </div>
+
+      <h3>С какими запросами я могу помочь</h3>
+      <div class="two">
+        <div class="feat"><b>Работа с аутентичными материалами</b><p>Как выбирать, адаптировать и внедрять живой контент<br>Разработка заданий к видео, статьям, подкастам</p></div>
+        <div class="feat"><b>Планирование уроков</b><p>Логика построения занятий<br>Баланс продуктивных и рецептивных навыков<br>Как не перегрузить, но дать максимум</p></div>
+        <div class="feat"><b>Методические подходы</b><p>Коммуникативный, лексический и Dogme-подходы<br>Как внедрять эти методы на практике<br>Какие инструменты помогают раскрыть каждый из них</p></div>
+        <div class="feat"><b>Работа с платформами: EDVIBE и Progressme</b><p>Эффективное использование возможностей<br>Как строить уроки вокруг платформ, а не подстраиваться под них</p></div>
+        <div class="feat"><b>Групповые уроки</b><p>Структура и динамика<br>Подбор материалов и адаптация под уровень<br>Управление вовлечённостью и коммуникацией в группе</p></div>
+        <div class="feat"><b>💬 Консультация - это не лекция, а диалог</b><p>Моя цель - не научить «как правильно», а помочь найти подход, который сработает именно для вас.</p></div>
+      </div>
+
+      <div class="contact">
+        <p>💬 Хочешь проработать свой запрос? Свяжись со мной в Telegram - <a href="https://t.me/vulpiks" target="_blank" rel="noopener">@vulpiks</a>, и мы всё обсудим! Или приходи на <a href="https://t.me/+LJrEV_wAHwQzYzky" target="_blank" rel="noopener">мой канал</a>.</p>
+        <a class="btn line sm" href="#formats">← все форматы</a>
+      </div>
+    </article>
+
+    <!-- Финал -->
+    <div class="cta rv" id="contacts">
+      <h2>мои соцсети&nbsp;✦</h2>
+      <p>💬 Есть вопросы или хочешь записаться? Напиши в Telegram - @vulpiks, всегда рада помочь!</p>
+      <div class="socials">
+        <a class="social" href="https://t.me/vulpiks" target="_blank" rel="noopener"><div class="ic tg">✉</div><div><b>@vulpiks</b><small>написать и записаться</small></div></a>
+        <a class="social" href="https://t.me/+LJrEV_wAHwQzYzky" target="_blank" rel="noopener"><div class="ic tg">TG</div><div><b>Ксюша, поболтаем? 🇬🇧</b><small>Привет, я Ксюша ✨ Преподаю английский взрослым уже 12+ лет</small></div></a>
+        <a class="social" href="https://www.instagram.com/ksu.speaks.eng/" target="_blank" rel="noopener"><div class="ic ig">IG</div><div><b>@ksu.speaks.eng</b><small>instagram</small></div></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>vulpiks • english - английский с ксюшей</footer>
+
+<div id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
+<script>
+  document.querySelectorAll('.gallery img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      var lb = document.getElementById('lb');
+      lb.querySelector('img').src = img.src;
+      lb.classList.add('on');
+    });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.getElementById('lb').classList.remove('on'); });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.pop[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
+  });
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.06 });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+</body>
+</html>
