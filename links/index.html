@@ -44,6 +44,11 @@
   a.adv .tx small{color:rgba(255,255,255,.8)}
   a.adv .ar{color:var(--gold)}
   .adv-wrap[hidden]{display:none}
+  a.book{background:var(--berry);border-color:var(--berry);color:#fff}
+  a.book .ic{background:rgba(255,255,255,.18)}
+  a.book:hover{border-color:var(--berry);filter:brightness(1.08)}
+  a.club{border-color:var(--pink)}
+
   .soc{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 10px;margin-top:28px}
   .soc a{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-weight:800;font-size:14px;border:1.5px solid var(--ink);border-radius:999px;padding:6px 13px}
   .soc a:hover{background:var(--ink);color:#fff}
@@ -74,6 +79,18 @@
       <span class="tx"><b>Telegram</b></span>
       
     </a>
+    <a class="l book" href="https://t.me/vulpiks?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F" target="_blank" rel="noopener">
+      <span class="ic">✍️</span>
+      <span class="tx"><b>Записаться на занятия</b></span>
+    </a>
+    <a class="l club" href="../clubs/">
+      <span class="ic">🗣</span>
+      <span class="tx"><b>Хочу в разговорный клуб</b></span>
+    </a>
+    <a class="l club" href="../girlies/">
+      <span class="ic">💅</span>
+      <span class="tx"><b>Клуб Girlies Only</b></span>
+    </a>
     <div class="adv-wrap" id="adv" hidden>
     <a class="l adv" href="https://vulpiks.ru/advent/" target="_blank" rel="noopener">
       <span class="ic">🎁</span>
@@ -85,6 +102,10 @@
       <span class="ic">📚</span>
       <span class="tx"><b>Бесплатная библиотека</b></span>
       
+    </a>
+    <a class="l" href="../">
+      <span class="ic">👋</span>
+      <span class="tx"><b>Обо мне и форматы занятий</b></span>
     </a>
     <a class="l" href="https://www.instagram.com/ksu.speaks.eng/" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
