@@ -2,6 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ксюша · английский для взрослых — все ссылки</title>
 <meta name="description" content="Телеграм-канал, бесплатная встреча-знакомство, форматы занятий и отзывы — всё в одном месте.">
@@ -111,10 +113,6 @@
 
   
 </main>
-<script>
-  // адвент показывается сам: с 25 ноября по 10 января
-  (function(){var d=new Date(),m=d.getMonth()+1,day=d.getDate();
-    if((m===11&&day>=25)||m===12||(m===1&&day<=10)||location.hash==="#advent")document.getElementById("adv").hidden=false;})();
-</script>
+<script src="links.js"></script>
 </body>
 </html>

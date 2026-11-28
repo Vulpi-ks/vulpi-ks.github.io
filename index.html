@@ -2,6 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ксюша · английский для взрослых</title>
 <meta name="description" content="Английский для взрослых A0–B2: индивидуальные, парные, групповые и асинхронные занятия. Консультации для преподавателей.">
@@ -248,7 +250,7 @@
   }
   @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
-<script>document.documentElement.className='js'</script>
+<script src="head.js"></script>
 </head>
 <body id="top">
 
@@ -270,11 +272,7 @@
     </div>
   </div>
 </nav>
-<script>
-(function(){var n=document.querySelector('nav'),b=n.querySelector('.burger');
-b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();
-</script>
+<script src="menu.js"></script>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
@@ -381,11 +379,11 @@ n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',fu
     <div class="head rv"><h2><em>сертификаты</em></h2>
       <p>Я регулярно вкладываюсь в своё развитие как преподаватель и методист. У меня есть как международные сертификаты, так и десятки курсов, воркшопов и обучений по методике, работе с материалами, планированию и современным платформам.</p></div>
     <div class="gallery rv">
-      <img src="img/cert-1.jpg" alt="Сертификат Duolingo English Test" loading="lazy" onerror="this.remove()">
-      <img src="img/cert-2.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
-      <img src="img/cert-3.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
-      <img src="img/cert-4.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
-      <img src="img/cert-5.jpg" alt="Сертификат Cambridge" loading="lazy" onerror="this.remove()">
+      <img src="img/cert-1.jpg" alt="Сертификат Duolingo English Test" loading="lazy" data-optional>
+      <img src="img/cert-2.jpg" alt="Сертификат Cambridge" loading="lazy" data-optional>
+      <img src="img/cert-3.jpg" alt="Сертификат Cambridge" loading="lazy" data-optional>
+      <img src="img/cert-4.jpg" alt="Сертификат Cambridge" loading="lazy" data-optional>
+      <img src="img/cert-5.jpg" alt="Сертификат Cambridge" loading="lazy" data-optional>
     </div>
   </div>
 </section>
@@ -421,9 +419,9 @@ n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',fu
     <div class="head rv"><h2><em>отзывы</em></h2>
       <p>Вот что студенты говорят о наших занятиях</p></div>
     <div class="gallery tall rv">
-      <img src="img/review-1.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
-      <img src="img/review-2.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
-      <img src="img/review-3.jpg" alt="Отзыв ученика" loading="lazy" onerror="this.remove()">
+      <img src="img/review-1.jpg" alt="Отзыв ученика" loading="lazy" data-optional>
+      <img src="img/review-2.jpg" alt="Отзыв ученика" loading="lazy" data-optional>
+      <img src="img/review-3.jpg" alt="Отзыв ученика" loading="lazy" data-optional>
     </div>
   </div>
 </section>
@@ -723,26 +721,7 @@ n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',fu
 
 <footer>vulpiks • english - английский с ксюшей</footer>
 
-<div id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
-<script>
-  document.querySelectorAll('.gallery img').forEach(function (img) {
-    img.addEventListener('click', function () {
-      var lb = document.getElementById('lb');
-      lb.querySelector('img').src = img.src;
-      lb.classList.add('on');
-    });
-  });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.getElementById('lb').classList.remove('on'); });
-  document.addEventListener('click', function (e) {
-    document.querySelectorAll('details.pop[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
-  });
-  var rv = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.06 });
-    rv.forEach(function (el) { io.observe(el); });
-  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
-</script>
+<div id="lb"><img alt=""></div>
+<script src="main.js"></script>
 </body>
 </html>
