@@ -315,6 +315,12 @@ window.addEventListener('hashchange',fromHash);
 /* ---------- filters ---------- */
 const state={lv:'',q:'',saved:false};
 const LVNAME={'0':'A1–A2','1':'B1','2':'B2+'};
+function lvSpan(c){ // уровни карточки: свой уровень + весь диапазон, если он указан («A2 - B1», «B1+/B2»)
+  const t=(c.querySelector('.lvl')||{}).textContent||'', lo=+c.dataset.lv;
+  if(/Любой/.test(t)) return [0,1,2];
+  const m=t.match(/[-–\/]\s*([ABC])([12])/); if(!m) return [lo];
+  const hi=m[1]==='A'?0:(m[1]==='B'&&m[2]==='1'?1:2); const r=[]; for(let i=lo;i<=Math.max(lo,hi);i++) r.push(i); return r;
+}
 function apply(){
   const v=state.q.trim().toLowerCase(), lv=state.lv===''?null:+state.lv, filtering=!!(v||lv!==null||state.saved);
   let any=false;
@@ -322,7 +328,7 @@ function apply(){
     let secAny=false;
     sec.querySelectorAll('.grid').forEach(g=>{
       let n=0; g.querySelectorAll('.card').forEach(c=>{
-        const ok=(!v||c.dataset.s.includes(v))&&(lv===null||+c.dataset.lv<=lv)&&(!state.saved||saved.has(c.dataset.key));
+        const ok=(!v||c.dataset.s.includes(v))&&(lv===null||lvSpan(c).includes(lv))&&(!state.saved||saved.has(c.dataset.key));
         c.classList.toggle('hide',!ok); if(ok)n++;});
       g.classList.toggle('hide',!n); if(n) secAny=true;
     });
@@ -337,7 +343,7 @@ function apply(){
   $('#empty').textContent=(state.saved&&!saved.size)?'Пока пусто — нажмите ♡ на карточке, чтобы сохранить ресурс себе.':'Ничего не нашлось — попробуйте другое слово или уровень 🌿';
   $('#fav').classList.toggle('hide',filtering); $('#outro').classList.toggle('hide',!!(v||state.saved));
   const hint=$('#hint'); const parts=[];
-  if(lv!==null) parts.push('показываю то, что уже подойдёт на уровне '+LVNAME[state.lv]);
+  if(lv!==null) parts.push('показываю материалы уровня '+LVNAME[state.lv]+' и ресурсы для любого уровня');
   if(state.saved) parts.push('только ваша подборка');
   hint.innerHTML=parts.length?('Фильтр: '+parts.join(' · ')+' · <a href="#" id="reset">сбросить</a>'):''; hint.classList.toggle('show',!!parts.length);
   const r=$('#reset'); if(r) r.onclick=e=>{e.preventDefault(); setLv(''); state.saved=false; $('#savedBtn').classList.remove('on'); apply();};
