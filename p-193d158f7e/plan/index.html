@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Общий план">
+<title>Общий план</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f1ec;font:16px/1.4 system-ui,-apple-system,sans-serif;color:#1d1a18}
+form{background:#fffdfa;border:1px solid #e3ddd5;border-radius:18px;padding:26px 22px;width:min(340px,88vw);text-align:center}
+h1{font-size:19px;margin:0 0 14px}input{width:100%;box-sizing:border-box;font-size:17px;padding:12px 14px;border:1px solid #e3ddd5;border-radius:12px;margin-bottom:12px}
+button{width:100%;font:700 16px system-ui;padding:12px;border:0;border-radius:12px;background:#c24a6b;color:#fff}#e{color:#c24a6b;font-size:14px;min-height:18px;margin-top:10px}</style></head>
+<body><form id="f"><h1>Общий план</h1><input id="pw" type="password" autocomplete="current-password" placeholder="пароль" autofocus><button>открыть</button><div id="e"></div></form>
+<script>
+var SALT=new TextEncoder().encode("vulpiks-private-posting-v1"),IT=250000;
+var st={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},del:function(k){try{localStorage.removeItem(k)}catch(e){}}};
+function b64(a){return btoa(String.fromCharCode.apply(null,new Uint8Array(a)))}
+function unb64(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0)})}
+async function derive(pw){var m=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
+ return crypto.subtle.deriveBits({name:'PBKDF2',salt:SALT,iterations:IT,hash:'SHA-256'},m,256)}
+async function open_(raw){var K=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);
+ var b=await (await fetch('p.bin',{cache:'no-cache'})).arrayBuffer();
+ var d=await crypto.subtle.decrypt({name:'AES-GCM',iv:new Uint8Array(b,0,12)},K,new Uint8Array(b,12));
+ window.__K=K; var h=new TextDecoder().decode(d);
+ h=h.replace(/<head>/i,'<head><meta name="robots" content="noindex,nofollow">');
+ document.open();document.write(h);document.close();}
+(async function(){var s=st.get('vk-key');if(s){try{await open_(unb64(s));return}catch(e){st.del('vk-key')}}})();
+document.getElementById('f').addEventListener('submit',async function(ev){ev.preventDefault();var e=document.getElementById('e');e.textContent='открываю…';
+ try{var raw=await derive(document.getElementById('pw').value);await open_(raw);st.set('vk-key',b64(raw))}catch(x){e.textContent='неверный пароль'}});
+</script></body></html>
